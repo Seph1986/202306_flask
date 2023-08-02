@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Flask</title>
+
+    <style>
+        .container{
+            height: 95vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .inner_blocks{
+            width: 98%;
+            height: 98%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .block{
+            border: 2px solid black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class = 'title'>
+            <h1>WELCOME !</h1>
+        </div>
+        <div class = "inner_blocks">
+            {% for i in range(0,3)%}
+            <div class="block" style="height: 150px; width: 150px; background-color: rgb(124, 202, 228);"> 
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+    
+</body>
+</html>
