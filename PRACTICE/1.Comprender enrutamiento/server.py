@@ -14,7 +14,7 @@ def greeting(par):
 
 @app.route('/repeat/<int:count>/<string:word>')
 def repeat(count,word):
-    return f'{word*count}'
+    return f'{word*count} '
 
 if __name__=="__main__":  
     app.run(debug=True)
