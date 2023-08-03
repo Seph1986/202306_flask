@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {# CSS #}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    {# Justo for colors #}
+    <style>
+        .color1{
+            background-color: {{color1}};
+        }
+
+        .color2{
+            background-color: {{color2}};
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <main class="container">
+        <div class="title-container">
+            <h1 style="color : {{color1}}; background-color: {{color2}};">***Checkboard***</h1>
+        </div>
+        <div class="prueba">
+        {% for i in range(num_x) %}
+            <div class = tr>
+                {% for j in range(num_y) %}
+                
+                <div class="block color{{ (i+j)%2 + 1 }}"></div>
+
+                {% endfor %}
+                
+            </div>
+            <div></div>
+        {% endfor %}   
+        </div>  
+
+    </main>
+
+</body>
+</html>
