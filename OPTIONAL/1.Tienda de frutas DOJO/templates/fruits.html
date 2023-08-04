@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Dojo Fruit Store Assignment</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+          <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              <strong>Dojo Fruit Store</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+  
+      <main role="main">
+  
+        <section class="jumbotron text-center">
+          <div class="container">
+            <h1 class="jumbotron-heading">Dojo Fruits</h1>
+            <h4>See your fruits</h4>
+              <div class="container d-flex">
+                <!--  -->
+                <div class="card align-items-center m-3" style="width: 18rem;">
+                  <img src="{{ url_for('static', filename='img/apple.png')}}" class="card-img-top w-50 mg-l-" alt="Apple">
+                  <div class="card-body">
+                    <h5 class="card-title">Manzana</h5>
+                    <p class="card-text">La manzana es una fruta redonda y comestible producida por un árbol de manzana (Malus domestica).</p>
+                  </div>
+                </div>
+                <div class="card align-items-center m-3" style="width: 18rem;">
+                  <img src="{{ url_for('static', filename='img/blackberry.png')}}" class="card-img-top w-50 mg-l-" alt="Blackberry">
+                  <div class="card-body">
+                    <h5 class="card-title">Blackberry</h5>
+                    <p class="card-text">Las moras son conocidas por sus frutos comestibles oscuros y generalmente se comen frescas o en mermeladas, jaleas, pasteles y tartas.</p>
+                  </div>
+                </div>
+                <div class="card align-items-center m-3" style="width: 18rem;">
+                  <img src="{{ url_for('static', filename='img/raspberry.png')}}" class="card-img-top w-50 mg-l-" alt="Raspberry">
+                  <div class="card-body">
+                    <h5 class="card-title">Raspberry</h5>
+                    <p class="card-text"> Las frambuesas son perennes con tallos leñosos y tienen hojas compuestas con tres o más folletos dentados, dependiendo de la especie o cultivar.</p>
+                  </div>
+                </div>
+                <div class="card align-items-center m-3" style="width: 18rem;">
+                  <img src="{{ url_for('static', filename='img/strawberry.png')}}" class="card-img-top w-50 mg-l-" alt="Strawberry">
+                  <div class="card-body">
+                    <h5 class="card-title">Strawberry</h5>
+                    <p class="card-text"> La frutilla es el fruto comestible de las plantas del género Fragaria.</p>
+                  </div>
+                </div>
+
+                <!--  -->
+              </div> 
+            <p>
+              <a href="/" class="btn btn-primary my-2">Go back</a>
+            </p>
+          </div>
+        </section>
+  
+      </main>
+      
+</body>
+</html>
