@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container d-flex flex-column align-items-center justify-content-between">
+        <h1>Contador</h1>
+        <h2>{{count}}</h2>
+
+        <form action="/plus/" method="post">
+            <button class="btn btn-primary type="submit" name="plus2">COUNT +2</button>
+        </form>
+        
+        <form action="/destroy_session/">
+            <button class="btn btn-warning" type="submit" name="restar_counter">RESET</button>
+        </form>
+
+        <form action="/user_input/" method="post">
+            <label for="user_input">SUMAR LA SIGUIENTE CANTIDAD:</label>
+            <input type="text" id="user_input" name="user_input">
+            <button class="btn btn-success" type="submit">SUMAR CANTIDAD</button>
+        </form>
+        
+    
+    
+</body>
+
+</html>
