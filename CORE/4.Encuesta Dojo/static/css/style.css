@@ -1,0 +1,12 @@
+button:active{
+    transform: scale(0.9);
+}
+
+.custom-width{
+    width: 40%;
+    height: 80vh;
+}
+
+.comments-height{
+    height: 100px;
+}
