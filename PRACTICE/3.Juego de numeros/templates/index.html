@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de numeros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al Gran Juego de Numeros</h1>
+        <br>
+        <h3>Estoy pensando en un numero del 1 al 100</h4>
+        <h3>¡ Intenta adivinar !</h4>
+
+        {% if session["trys"] < 5 %}
+            {% if "response" in session %}
+
+                {% if session["response"] > session["ran_num"] %}
+                    <div class="high rounded-1">
+                        <h3>Muy alto</h3>
+                    </div>
+                
+                {% elif session["response"] < session["ran_num"] %}
+                    <div>
+                        <h3 class="low rounded-1">Muy bajo</h3>
+                    </div>
+                
+                {% else %}
+                    <div class="win rounded-1">
+                        <h3>ACERTASTE !cl</h3>
+                    </div>
+
+                    <form method="post" action="/restart/">
+                        <button class="btn btn-success" type="submit" >Reiniciar</button>
+                    </form>
+
+                {% endif %}
+
+            {% endif %}
+
+            <form  method="post" action="/number/">
+                <input class="arreglo" type="number" name="number" placeholder="Nro" min="0" max="100">
+                <button class="bg-primary arreglo2" type="submit" >Adivinar</button>
+            </form>
+
+        {% else %}
+
+        <div class="lose">
+            <h3>Has perdido</h3>
+        </div>
+
+        <form method="post" action="/restart/">
+            <button class="btn btn-success" type="submit" >Reiniciar</button>
+        </form>
+
+        {% endif %}
+
+        {% if "trys" in session %}
+
+            <div class="trys">
+                <h3>Numero de intentos: {{session["trys"]}}</h3>
+            </div>
+
+        {% endif %}
+    
+    </div>
+
+    
+</body>
+</html>
