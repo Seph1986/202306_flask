@@ -32,9 +32,6 @@ def eliminte_session():
 def double_plus():
 
     print("Paso por double plus")
-
-    request.form
-    
     if "contador" in session:
         session["contador"] += 1
     else:
