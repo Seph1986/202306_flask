@@ -16,10 +16,11 @@ def result():
 @app.route("/form/", methods = ["POST"])
 def form_recive():
 
-    session["user_name"] = request.form["user_name"]
-    session["location"] = request.form["location"]
-    session["language"] = request.form["language"]
-    session["comment"] = request.form["comment"]
+    keys = ["user_name","location","language","comment"]
+
+    for key in keys:
+        session[key] = request.form[key]
+    
 
     print(session["user_name"],session["location"],session["language"],session["comment"] )
     
