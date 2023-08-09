@@ -75,8 +75,7 @@ def money_process():
 @app.route("/reset/")
 def reset():
 
-    del session["gold"]
-    del session["console"]
+    session.clear()
 
     return redirect("/")
 
